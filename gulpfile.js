@@ -59,9 +59,9 @@ gulp.task('server', function() {
 		gulp.start('copy:img');
 	});
 
-	watch('./src/img/svg/*.svg', function(){
-		gulp.start('svg');
-	});
+	// watch('./src/img/svg/*.svg', function(){
+	// 	gulp.start('svg');
+	// });
 });
 
 gulp.task('server:docs', function() {
@@ -133,32 +133,32 @@ var htmlbeautifyOptions = {
 	"end_with_newline": false
 };
 
-gulp.task('svg', function() {
-	return gulp.src('./src/img/svg-for-sprites/*.svg')
-	.pipe(svgmin({
-		js2svg: {
-			pretty: true
-		}
-	}))
-	.pipe(cheerio({
-		run: function($) {
-			$('[fill]').removeAttr('fill');
-			$('[stroke]').removeAttr('stroke');
-			$('[style]').removeAttr('style');
-		},
-		parserOptions: { xmlMode: true }
-	}))
-	.pipe(replace('&gt;', '>'))
-	.pipe(svgSprite({
-		mode: {
-			symbol: {
-				sprite: "sprite.svg"
-			}
-		}
-	}))
-	.pipe(rename('sprite.svg'))
-	.pipe(gulp.dest('./build/img'));
-});
+// gulp.task('svg', function() {
+// 	return gulp.src('./src/img/svg-for-sprites/*.svg')
+// 	.pipe(svgmin({
+// 		js2svg: {
+// 			pretty: true
+// 		}
+// 	}))
+// 	.pipe(cheerio({
+// 		run: function($) {
+// 			$('[fill]').removeAttr('fill');
+// 			$('[stroke]').removeAttr('stroke');
+// 			$('[style]').removeAttr('style');
+// 		},
+// 		parserOptions: { xmlMode: true }
+// 	}))
+// 	.pipe(replace('&gt;', '>'))
+// 	.pipe(svgSprite({
+// 		mode: {
+// 			symbol: {
+// 				sprite: "sprite.svg"
+// 			}
+// 		}
+// 	}))
+// 	.pipe(rename('sprite.svg'))
+// 	.pipe(gulp.dest('./build/img'));
+// });
 
 gulp.task('copy:libs', function(callback) {
    
@@ -179,6 +179,7 @@ gulp.task('copy:libs-local', function(callback) {
 		.pipe(gulp.dest('./build/libs/'))
 	callback()
 });
+
 //fonts
 gulp.task('copy:fonts', function(callback) {
 	gulp.src('./src/fonts/**/*.*')
@@ -204,8 +205,8 @@ gulp.task('clean:build', function() {
 });
 
 gulp.task('copy:build:files', function(callback) {
-    gulp.src('./src/php/**/*.*')
-        .pipe(gulp.dest('./build/php/'))
+    // gulp.src('./src/php/**/*.*')
+    //     .pipe(gulp.dest('./build/php/'))
     gulp.src('./src/files/**/*.*')
         .pipe(gulp.dest('./build/files/'))
 	gulp.src('./src/fonts/**/*.*')
@@ -216,7 +217,8 @@ gulp.task('copy:build:files', function(callback) {
 gulp.task('default', function(){
     runSequence(
     	'clean:build',
-    	['styles', 'pug', 'svg', 'copy:libs', 'copy:libs-local', 'copy:img', 'copy:js', 'copy:fonts'],
+    	// ['styles', 'pug', 'svg', 'copy:libs', 'copy:libs-local', 'copy:img', 'copy:js', 'copy:fonts'],
+    	['styles', 'pug', 'copy:libs', 'copy:libs-local', 'copy:img', 'copy:js', 'copy:fonts'],
     	'server'
     )
 });
@@ -243,8 +245,8 @@ gulp.task('img:dist', function() {
 });
 
 gulp.task('copy:docs:files', function(callback) {
-    gulp.src('./src/php/**/*.*')
-        .pipe(gulp.dest('./dist/php/'))
+    // gulp.src('./src/php/**/*.*')
+    //     .pipe(gulp.dest('./dist/php/'))
     gulp.src('./src/files/**/*.*')
         .pipe(gulp.dest('./dist/files/'))
 	gulp.src('./src/fonts/**/*.*')
@@ -269,7 +271,8 @@ gulp.task('html:docs', function() {
 gulp.task('docs', function(callback){
     runSequence(
 		'clean:build',
-    	['styles', 'pug', 'svg', 'copy:libs', 'copy:libs-local', 'copy:img', 'copy:js'],
+    	// ['styles', 'pug', 'svg', 'copy:libs', 'copy:libs-local', 'copy:img', 'copy:js'],
+    	['styles', 'pug', 'copy:libs', 'copy:img', 'copy:js'],
     	'clean:docs',
     	['img:dist', 'copy:docs:files', 'html:docs' ],
     	'server:docs',

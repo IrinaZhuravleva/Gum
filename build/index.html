@@ -5,11 +5,14 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
 	<title>Hypophys</title>
+	<link rel="stylesheet" href="libs/animate/animate.css" />
 	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
 	<link rel="manifest" href="img/site.webmanifest" />
-	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700|Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="libs/owl-carousel/owl.carousel.min.css" />
+	<link rel="stylesheet" href="libs/owl-carousel/owl.theme.default.min.css" />
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700|Open+Sans:400,700&amp;display=swap&amp;subset=cyrillic" rel="stylesheet" />
 	<link rel="stylesheet" href="css/main.css" />
 </head>
 <div class="blockmenu">
@@ -54,21 +57,26 @@
 				</div>
 			</div>
 		</nav>
-		<div class="container">
-			<div class="wrapper__fon">
+		<div class="container container__content">
+			<div class="owl-carousel owl-theme">
+				<div class="item wrapper"></div>
+				<div class="item wrapper"></div>
+				<div class="item wrapper"></div>
+			</div>
+			<div class="header-title-wrapper">
 				<h1 class="header-title">Гуминовые препараты от нашей компании помогают вырастить и сохранить ваш урожай</h1>
-				<p class="header-subtitle">Успешно применяются в сельском хозяйстве и частном секторе </p>
-				<div class="numbers-animation">
-					<div class="numbers-wrapper">
-						<div class="number">
-							<div class="text">Прирост урожая&nbsp;до </div><span id="fun-level-1">0 %</span>
-						</div>
-						<div class="number">
-							<div class="text">Экономия на минеральных удобрениях до</div><span id="fun-level-2">0 %</span>
-						</div>
-						<div class="number">
-							<div class="text">Снижение расхода пестицидов до </div><span id="fun-level-3">0 %</span>
-						</div>
+				<p class="header-subtitle">Успешно применяются в сельском хозяйстве и частном секторе</p>
+			</div>
+			<div class="numbers-animation">
+				<div class="numbers-wrapper">
+					<div class="number">
+						<div class="text">Прирост урожая&nbsp;до </div><span id="fun-level-1">0 %</span>
+					</div>
+					<div class="number">
+						<div class="text">Экономия на минеральных удобрениях до</div><span id="fun-level-2">0 %</span>
+					</div>
+					<div class="number">
+						<div class="text">Снижение расхода пестицидов до </div><span id="fun-level-3">0 %</span>
 					</div>
 				</div>
 			</div>
@@ -90,8 +98,8 @@
 	</section>
 </body>
 <script src="libs/jquery/jquery-3.3.1.min.js"></script>
+<script src="libs/owl-carousel/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
 <script src="libs/animate-number/jquery.animateNumber.min.js"></script>
-<animate-number></animate-number>
 
 </html>

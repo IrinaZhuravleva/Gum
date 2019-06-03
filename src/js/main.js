@@ -19,14 +19,6 @@ $(document).ready(function(){
     menu.removeClass('blockmenu_active');
   });
 
-  //анимация молекулы и ее текстовых элементов
-
-  // $('.clicker').on("click", function(){
-  //   $('.header-content__background').toggleClass('active');
-  //   $('.block').toggleClass('active');
-  // });
-
-  
 
   //анимация чисел
 
@@ -78,6 +70,25 @@ $('#fun-level-3').animateNumber(
     duration: 5000
   }
 );
+
+
+var owl = $('.owl-carousel');
+owl.owlCarousel({
+    items:1,
+    // loop:true,
+    margin:0,
+    // autoplay:true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    dots: false,
+    // animateOut: 'fadeOut',
+
+    // animateOut: 'slideOutDown',
+    // animateIn: 'flipInX',
+    // stagePadding:30,
+    // smartSpeed:450
+
+});
 
 	
 });

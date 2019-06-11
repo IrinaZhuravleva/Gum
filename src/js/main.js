@@ -75,18 +75,19 @@ $('#fun-level-3').animateNumber(
 var owl = $('.owl-carousel');
 owl.owlCarousel({
     items:1,
-    // loop:true,
+    loop:true,
     margin:0,
-    // autoplay:true,
+    autoplay:true,
     autoplayTimeout:5000,
     autoplayHoverPause:true,
     dots: false,
-    // animateOut: 'fadeOut',
+    animateOut: 'fadeOut',
 
     // animateOut: 'slideOutDown',
     // animateIn: 'flipInX',
     // stagePadding:30,
     // smartSpeed:450
+    smartSpeed:350
 
 });
 
